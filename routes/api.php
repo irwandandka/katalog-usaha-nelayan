@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SellerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/products', [ProductController::class, 'get']);
 Route::get('/product/{product}', [ProductController::class, 'productDetail']);
+Route::get('/categories', [CategoryController::class, 'get']);
+Route::get('/product-category/{category}', [ProductController::class, 'productCategory']);
+Route::get('/sellers', [SellerController::class, 'get']);
+
+
+Route::get('/file', [ProductController::class, 'getFile']);
